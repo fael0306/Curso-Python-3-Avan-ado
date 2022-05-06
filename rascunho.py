@@ -69,15 +69,50 @@ class PriorityQueue:
         return heapq.heappop(self._queue)[-1]
 
 class pessoa:
-    def __init__(self,nome):
+    def __init__(self,nome,idade):
         self.nome = nome
+        self.idade = idade
     def __repr__(self): 
         return self.nome
 
 q = PriorityQueue()
-q.push(pessoa('Rafael'),22)
-q.push(pessoa('Gabriel'),50)
-q.push(pessoa('Carlos'),34)
-q.push(pessoa('Maria'),55)
+q.push(pessoa('Rafael',22),22)
+q.push(pessoa('Gabriel',22),50)
+q.push(pessoa('Carlos',50),34)
+q.push(pessoa('Maria',35),55)
 
 print(q.pop())
+
+
+from operator import xor
+
+n1 = 5
+n2 = 9
+b1 = bin(n1)
+b2 = bin(n2)
+r = n1^n2
+n1 << 2
+r = (~n1) #Complemento
+
+lista = [10,11,3,20,18,7,9]
+lista = sorted(lista)
+
+tupla = ['Rafael','Gabriel','Fernando']
+tupla = sorted(tupla)
+
+d = {1:'b', 2:'a',3:'c'}
+d = sorted(d)
+
+def pelonome(pessoa):
+    return pessoa.nome
+    
+def pelaidade(pessoa):
+    return pessoa.idade
+
+p1 = pessoa('Rafael',22)
+p2 = pessoa('Gabriel',22)
+p3 = pessoa('Diego',38)
+
+pessoas = [p1,p2,p3]
+print(sorted(pessoas,key = pelonome))
+print(sorted(pessoas,key = pelaidade))
