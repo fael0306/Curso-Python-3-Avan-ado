@@ -133,3 +133,17 @@ f2 = pai(20)
 
 f1()
 f2()
+
+from collections import defaultdict
+d = defaultdict(list)
+d['rafael'].append(10)
+d['rafael'].append(20)
+d['rafael'].append(30)
+d['joao'].append(1)
+d['joao'].append(2)
+print(d['joao'])
+d = defaultdict(set)
+d['rafael'].add(30)
+d['rafael'].add(30)
+d['rafael'].add(30)
+d['rafael'].add(0)
