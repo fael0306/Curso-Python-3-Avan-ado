@@ -57,3 +57,27 @@ heapq.heappop(idades)
 heapq.heappop(idades)
 heapq.heappop(idades)
 heapq.heappush(idades,8)
+
+class PriorityQueue:
+    def __init__ (self):
+        self._queue = []
+        self._index = 0
+    def push(self,item,priority):
+        heapq.heappush(self._queue, (-priority, self._index, item))
+        self._index = self._index+1
+    def pop(self):
+        return heapq.heappop(self._queue)[-1]
+
+class pessoa:
+    def __init__(self,nome):
+        self.nome = nome
+    def __repr__(self): 
+        return self.nome
+
+q = PriorityQueue()
+q.push(pessoa('Rafael'),22)
+q.push(pessoa('Gabriel'),50)
+q.push(pessoa('Carlos'),34)
+q.push(pessoa('Maria'),55)
+
+print(q.pop())
