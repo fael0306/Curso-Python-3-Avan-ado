@@ -147,3 +147,24 @@ d['rafael'].add(30)
 d['rafael'].add(30)
 d['rafael'].add(30)
 d['rafael'].add(0)
+
+from collections import OrderedDict
+
+d = OrderedDict()
+
+d['Python'] = 10
+d['Java'] = 5
+d['PHP'] = 6
+d['C'] = 10
+
+for key in d:
+    print(key, d[key])
+    
+d2 = {}
+
+d2['Python'] = 10
+d2['Java'] = 5
+d2['PHP'] = 6
+d2['C'] = 10
+
+print(d2)
