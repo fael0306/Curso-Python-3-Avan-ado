@@ -168,3 +168,103 @@ d2['PHP'] = 6
 d2['C'] = 10
 
 print(d2)
+
+from collections import Counter
+
+c = Counter(a=4,b=2,c=3)
+c.elements()
+
+lista = list(c.elements())
+
+print(lista)
+
+lista = [1,2,3,4,5,6]
+a = lista[-1]
+b = lista[-2]
+c = lista[-3]
+d = lista[-4:-2]
+e = lista[::-2]
+
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+
+lista = [1,2,3,4,5,6]
+
+ultimostres = slice(-3,None)
+
+a = lista[ultimostres]
+
+print(a)
+
+c = {1,2,3,4,5}
+
+d = {3,3,4,4,6,7}
+
+print(c)
+print(d)
+
+uniao = c | d
+
+print(uniao)
+
+intersecao = c & d
+
+print(intersecao)
+
+uu = c-d
+
+print(uu)
+
+aa = c^d
+
+print(aa)
+
+import itertools
+
+for p in itertools.product([1,2,3],[4,5]):
+    print(p)
+    
+import itertools
+
+for p in itertools.permutations([1,2,3]):
+    print(''.join(str(x) for x in p))
+    
+    
+d = {'marcos':28,'joao':19,'maria':25}
+
+a = d['marcos']
+
+print(d.get('joao'))
+
+
+if d.get('Teste'):
+    print("Chave existente")
+else:
+    print("chave inexistente")
+    
+    
+import itertools
+
+l1 = [1,2,3]
+l2 = [4,5,6]
+
+comb = itertools.chain(l1,l2)
+
+print(list(comb))
+
+l3 = ["Rafael","Gabriel","Python"]
+
+comb = itertools.chain(l1,l2,l3)
+
+print(list(comb))
+
+combinando = zip([1,2,3],[4,5,6])
+# Devolve um objeto
+
+# Transformando objeto em lista
+r = list(combinando)
+
+print(r)
