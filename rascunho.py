@@ -313,3 +313,60 @@ f = d2.values()
 print(e)
 print(f)
 
+from collections import Counter
+
+palavras = ['Rafael','Gabriel','Isabella','Maria','Gertrudes','Rafael','Gabriel','Adriano','Rafael','Gabriel']
+
+palavrascont = Counter(palavras)
+
+maiscomum = palavrascont.most_common(1)
+duasmaiscomuns = palavrascont.most_common(2)
+tresmaiscomuns = palavrascont.most_common(3)
+
+print(maiscomum)
+print(duasmaiscomuns)
+print(tresmaiscomuns)
+#etc.
+
+from collections import Counter
+
+a = Counter([1,1,2,3,4,4,5,6])
+b = Counter([2,2,1,3,5,6,7])
+
+print(a)
+print(b)
+
+c = a+b
+
+print(c)
+
+linhas = [{'Nome':'Rafael','Idade':22},
+          {'Nome':'Gabriel','Idade':22},
+          {'Nome':'Carlos','Idade':55},
+          {'Nome':'Isabel','Idade':59},
+          {'Nome':'Isabel','Idade':58}]
+
+print(linhas)
+
+from operator import itemgetter
+
+linhaspelonome = sorted(linhas,key=itemgetter('Nome'))
+linhaspelaidade = sorted(linhas,key=itemgetter('Idade'))
+
+print(linhaspelonome)
+print(linhaspelaidade)
+
+ordem = sorted(linhas,key=itemgetter('Nome','Idade'))
+
+print(ordem)
+
+from operator import itemgetter
+
+lista = [{'idade':28},{'idade':15},{'idade':20}]
+
+menor = min(lista,key=itemgetter('idade'))
+maior = max(lista,key=itemgetter('idade'))
+
+print(menor)
+print(maior)
+
