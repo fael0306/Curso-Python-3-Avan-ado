@@ -268,3 +268,48 @@ combinando = zip([1,2,3],[4,5,6])
 r = list(combinando)
 
 print(r)
+
+from operator import itemgetter
+from itertools import groupby
+
+exemplos = [("Marcos",28),("Pedro",19),("João",20),("Marcos",20),("João",18),("Marcos",30)]
+
+exemplos.sort(key=itemgetter(0))
+
+print({key: sorted(map(itemgetter(1),value)) for key, value in groupby(exemplos,key=itemgetter(0))})
+
+tupla = (1,2,3,4)
+for count, elem in enumerate(tupla):
+    print('%d %d'% (count,elem))
+
+d = {'PC':3000,'Fone de ouvido':100,'Iphone':5000}
+
+menorpreco = min(zip(d.values(), d.keys()))
+maiorpreco = max(zip(d.values(), d.keys()))
+
+a = min(d.values())
+b = max(d.values())
+c = min(d.keys())
+d = max(d.keys())
+
+d = {'Marcos':28,'Rafael':19,'Janderson':20,'Milena':20,'João':18,'Marcos':30}
+
+d2 = {'José':18,'Marcos':25,'Rafael':22,'Gabriel':22,'Jeferson':18,'Fabrício':30}
+
+a=d.keys()
+b=d2.keys()
+
+c = d.keys() & d2.keys()
+
+print(c)
+
+ex = d.keys() - d2.keys()
+
+print(ex)
+
+e = d.values()
+f = d2.values()
+
+print(e)
+print(f)
+
