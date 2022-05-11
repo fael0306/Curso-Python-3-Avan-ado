@@ -370,3 +370,38 @@ maior = max(lista,key=itemgetter('idade'))
 print(menor)
 print(maior)
 
+class Objeto:
+    def __init__(self, obj_id):
+        self.obj_id = obj_id
+    def __repr__(self):
+        return str(self.obj_id)
+
+objetos = [Objeto(90), Objeto(15), Objeto(20)]
+print(objetos)
+
+objetos = sorted(objetos, key = lambda obj: obj.obj_id)
+print(objetos)
+
+
+from operator import attrgetter
+
+objetos = sorted(objetos, key = attrgetter('obj_id'))
+print(objetos)
+
+from operator import itemgetter
+from itertools import groupby
+
+linhas = [
+    {'Produto':'Calça','Preço':300},
+    {'Produto':'Bermuda','Preço':120},
+    {'Produto':'Camisa','Preço':120},
+    {'Produto':'Casaco','Preço':300},
+    {'Produto':'Tênis','Preço':120}
+    ]
+
+linhas.sort(key=itemgetter('Preço'))
+
+for data, items in groupby(linhas, key=itemgetter('Preço')):
+    print(data)
+    for i in items:
+        print(' ', i)
