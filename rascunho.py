@@ -405,3 +405,25 @@ for data, items in groupby(linhas, key=itemgetter('Preço')):
     print(data)
     for i in items:
         print(' ', i)
+
+lista = [10,-5,20,30,-40,100]
+
+a = [i for i in lista if i>0]
+b = [i for i in lista if i<0]
+
+print(a)
+print(b)
+
+p = (i for i in lista if i>0)
+print(p)
+
+for j in p:
+    print(j)
+
+lista = [1,2,3,4]
+
+import math
+
+quadrado = [round(math.sqrt(i),2) for i in lista if i>=3]
+print(quadrado)
+        
