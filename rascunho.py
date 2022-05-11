@@ -583,3 +583,21 @@ c2 = Complex(2,4)
 c3 = c1+c2
 print(c3)
 
+nome = "Rafael Manteiga Balbino"
+nome2 = nome.replace("Rafael","Gabriel")
+print(nome)
+print(nome2)
+
+import re
+
+texto = "A data do meu aniversário é 03/06/1999"
+
+print(texto)
+
+padrao = re.compile(r"(\d+)/(\d+)/(\d+)")
+texto2 = re.sub(padrao,r"\3-\2-\1",texto)
+print(texto2)
+
+voltando = re.compile(r"(\d+)-(\d+)-(\d+)")
+textovolta = re.sub(voltando,r"\3/\2/\1",texto2)
+print(textovolta)
