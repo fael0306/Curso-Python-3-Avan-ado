@@ -462,3 +462,45 @@ id, email = sub
 print(id)
 print(email)
 
+lista = [10,5,20,8]
+s = sum(lista)
+m = max(lista)
+m2 = min(lista)
+
+print(s)
+print(m)
+print(m2)
+
+lista = [1100,900,320]
+
+soma_quad = sum([x*x for x in lista])
+print(soma_quad)
+
+soma_quad = sum(x*x for x in lista)
+print(soma_quad)
+
+a = {'x':1, 'z':3}
+b = {'y':2, 'z':4}
+
+from collections import ChainMap
+
+c = ChainMap(a,b)
+print(c)
+print(c['x'])
+print(c['y'])
+print(c['z']) # Chave duplicada: vale o primeiro mapeamento
+
+print(len(c))
+
+del c['x']
+print(a)
+
+a = {'x':1,'z':3}
+
+merged = dict(b)
+merged.update(a)
+
+print(merged['x'])
+print(merged['y'])
+print(merged['z'])
+
