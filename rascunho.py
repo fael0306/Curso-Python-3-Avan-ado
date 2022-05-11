@@ -700,3 +700,16 @@ print("")
 random.shuffle(lista)
 print(lista)
 
+def multiplicar(x,y):
+    "Essa função retorna a multiplicação de 2 números"
+    return(x*y)
+
+help(multiplicar)
+
+print(multiplicar.__doc__)
+
+class Teste:
+    """Testando a função help"""
+    pass
+
+help(Teste)
