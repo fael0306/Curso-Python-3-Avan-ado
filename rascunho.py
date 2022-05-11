@@ -426,4 +426,39 @@ import math
 
 quadrado = [round(math.sqrt(i),2) for i in lista if i>=3]
 print(quadrado)
-        
+
+from itertools import compress
+
+nomes = ['Rafael','Gabriel','Maria','Pedro']
+cont = [10,5,6,2]
+mais5 = [i>5 for i in cont]
+lista = list(compress(nomes,mais5))
+print(lista)
+
+
+precos = {
+    'Iphone':2500,
+    'Notebook':2000,
+    'Mouse':90,
+    'Teclado':70
+    }
+
+precosmais100 = {key:value for key, value in precos.items() if value>100}
+
+print(precosmais100)
+
+from collections import namedtuple
+
+Subscriber = namedtuple('Subscriber', ['id', 'email'])
+
+sub = Subscriber('1000','rafael.manteiga@hotmail.com')
+
+print(sub.id)
+print(sub.email)
+
+len(sub)
+
+id, email = sub
+print(id)
+print(email)
+
