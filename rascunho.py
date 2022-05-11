@@ -560,3 +560,26 @@ print(r)
 r = p.match('03/06/1999')
 print(r)
 
+lista = [1,2,3]
+
+for e in lista:
+    print(e)
+    
+for e in reversed(lista):
+    print(e)
+
+class Complex:
+    def __init__(self,r,i):
+        self.r = r
+        self.i = i
+    def __repr__(self):
+        return "({0}+{1}i)".format(self.r,self.i)
+    def __add__(self, other):
+        return Complex(self.r + other.r, self.i + other.i)
+
+c1 = Complex(3,2)
+print(c1)
+c2 = Complex(2,4)
+c3 = c1+c2
+print(c3)
+
