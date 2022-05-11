@@ -601,3 +601,102 @@ print(texto2)
 voltando = re.compile(r"(\d+)-(\d+)-(\d+)")
 textovolta = re.sub(voltando,r"\3/\2/\1",texto2)
 print(textovolta)
+
+import re
+
+texto = "Java, java, Java"
+print(texto)
+
+texto = re.sub("java","Python",texto, flags=re.IGNORECASE)
+print(texto)
+
+texto = "Bora, irmão"
+print(texto)
+
+print(texto.strip("Bora,"))
+
+texto = "Aprendendo Python"
+
+print(texto.ljust(20))
+print(texto.rjust(20))
+print(texto.center(20))
+
+print(format(texto,">20"))
+print(format(texto,"<20"))
+print(format(texto,"^20"))
+print(format(texto,"->20s"))
+y = 3.141592
+print(format(y,">10"))
+
+a = round(3.1415,2)
+print(a)
+a = round(3.7415,2)
+print(a)
+
+import numpy as np
+
+l = [1,2,3]
+print(l)
+print(l*2)
+
+x = np.array([1,2,3])
+y = np.array([4,5,6])
+
+print(x*2)
+print(x+2)
+
+print(np.sqrt(x))
+print("\n")
+matriz = np.matrix([])
+
+matriz = np.matrix([[1,2],[3,4]])
+print(matriz)
+print("\n")
+print(matriz.T)
+print(matriz.I)
+
+import random
+
+lista = [1,2,3,4,5,6]
+
+print(random.choice(lista))
+print(random.choice(lista))
+print(random.choice(lista))
+print(random.choice(lista))
+print(random.choice(lista))
+print(random.choice(lista))
+
+import random
+
+lista = [1,2,3,4,5,6]
+
+print(random.choice(lista))
+print(random.choice(lista))
+print(random.choice(lista))
+print(random.choice(lista))
+print(random.choice(lista))
+print(random.choice(lista))
+print("")
+print(random.sample(lista,1))
+print(random.sample(lista,2))
+print(random.sample(lista,3))
+print(random.sample(lista,4))
+print(random.sample(lista,5))
+print(random.sample(lista,6))
+print("")
+print(random.randint(0,10))
+print(random.randint(0,10))
+print(random.randint(0,10))
+print(random.randint(0,10))
+print(random.randint(0,10))
+print(random.randint(0,10))
+print(random.randint(0,10))
+print(random.randint(0,10))
+print(random.randint(0,10))
+print(random.randint(0,10))
+print("")
+random.random()
+print("")
+random.shuffle(lista)
+print(lista)
+
