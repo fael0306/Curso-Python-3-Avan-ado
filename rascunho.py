@@ -504,3 +504,59 @@ print(merged['x'])
 print(merged['y'])
 print(merged['z'])
 
+s = 'arquivo.txt'
+a = s.endswith('.txt')
+print(a)
+b = s.startswith('arq')
+print(b)
+c = s.startswith('xxx')
+print(c)
+
+from fnmatch import fnmatch,  fnmatchcase
+
+a = fnmatch('qrquivo.txt,','*.txt')
+print(a)
+
+b = fnmatch('arquivo.py','*.txt')
+print(b)
+
+c = fnmatch('arq10.txt','arq[0-9]*')
+print(c)
+
+d = fnmatchcase('arquivo.txt','*.TXT')
+print(d)
+
+texto = 'arquivo.txt'
+
+a = texto.endswith('.txt')
+print(a)
+b = texto.startswith('arq')
+print(b)
+c = texto.find('txt')
+print(c)
+
+data = '03/06/1999'
+import re
+r = True if re.match(r'\d+/\d+/\d+',data) else False
+print(r)
+
+r = True if re.match(r'\d+/\d+/\d+',texto) else False
+print(r)
+
+data_pattern = re.compile(r'\d+/\d+/\d+')
+print(data_pattern)
+
+r = True if data_pattern.match(data) else False
+print(r)
+
+texto = "blablabla 12/11/2020, kasfnf 10/10/1994"
+nn = data_pattern.findall(texto)
+print(nn)
+
+p = re.compile(r'(\d+)/(\d+)/(\d+)$')
+r = p.match('03/06/1999Rafael')
+print(r)
+
+r = p.match('03/06/1999')
+print(r)
+
