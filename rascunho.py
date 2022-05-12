@@ -796,3 +796,41 @@ b = B()
 b.fazer_algo()
 b.algum_metodo("Python")
 
+x = [1,2,3]
+y = [4,5,6]
+for i,j in zip(x,y):
+    print(i,j)
+
+print(list(zip(x,y)))
+
+class Pessoa:
+    __slots__ = ["Nome","Idade","Peso"]
+    def __init__(self, Nome, Idade, Peso):
+        self.Nome = Nome
+        self.Idade = Idade
+        self.Peso = Peso
+
+pessoa1 = Pessoa("Rafael",22,70)
+print(" Nome:",pessoa1.Nome,"\n","Idade:",pessoa1.Idade,"\n","Peso:",pessoa1.Peso)
+
+class SomentePares(list):
+    def append(self, inteiro):
+        if not isinstance(inteiro, int):
+            raise TypeError("Somente inteiros")
+        if inteiro%2:
+            raise ValueError("Somente pares")
+
+        super().append(inteiro)
+
+numero2 = SomentePares()
+#numero2.append(1.77)
+numero = SomentePares()
+#numero.append(5)
+#Caiu na exceção, pois só aceita pares e inteiros
+numero2.append(2)
+numero2.append(4)
+numero.append(6)
+numero.append(8)
+print(numero)
+print(numero2)
+
