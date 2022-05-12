@@ -759,4 +759,16 @@ class LivroHTML(Livro, LivroHTMLMixin):
 livro_html = LivroHTML("Algum livro","blablabla")
 print(livro_html.renderizar())
 
+def count(n):
+    while True:
+        yield n
+        n = n+1
+c = count(0)
+print(c)
+
+#c[10:20] -> não funciona
+
+import itertools
+for x in itertools.islice(c,10,20):
+    print(x)
 
