@@ -713,3 +713,35 @@ class Teste:
     pass
 
 help(Teste)
+
+class p():
+    pass
+
+P = p()
+print(p.__mro__)
+print(p.mro())
+
+class veiculo():
+    def __init__(self):
+        pass
+class carro(veiculo):
+    def __init__(self):
+        super(carro,self).__init__()
+class trem(veiculo):
+    pass
+
+print(veiculo.__mro__)
+print(carro.__mro__)
+print(trem.__mro__)
+print(veiculo.mro())
+print(carro.mro())
+print(trem.mro())
+
+class carrotrem(carro,trem):
+    pass
+
+print(carrotrem.__mro__)
+
+# Herança
+
+
