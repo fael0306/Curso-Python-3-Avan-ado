@@ -873,3 +873,29 @@ except ValueError as e:
     print("Os argumentos da exceção foram: ", e.args)
 finally:
     print("Isso sempre será executado.")
+
+# PEP 8
+#import os
+#import sys
+
+#obj = minhafuncao(var_one,var_two,
+#                  var_three, var_four)
+
+#my_list=[
+#    1,2,3,
+#    4,5,6,
+#    ]
+
+#result = (var1
+#          + var2
+#         + (var3-var4)
+#          - result_var1
+#          - result_var4)
+
+#foo ( x, y ) errado
+#foo(x,y) correto
+
+#if x==4: print(x)
+
+#PalavrasComecandoPorMaiscula #classe
+#minusculas_separadas_por_underscores # função
