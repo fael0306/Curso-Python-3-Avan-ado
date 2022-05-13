@@ -1096,3 +1096,5 @@ class Filha(Pai, metaclass=MinhaMetaClasse):
 obj = Filha()
 print(obj.__class__.__class__)
 
+lista = ["Python", "PHP", "C", "Ruby", "Lua"]
+print(sorted(lista, key=len))
