@@ -1020,3 +1020,37 @@ print(next(gen))
 
 for i in gen:
     print(i, end=' ')
+
+def somar(a,b):
+    return(a+b)
+
+def modificar(funcao):
+    def subtrair(a,b):
+        return(a-b)
+    return subtrair
+
+@modificar
+def somar(a,b):
+    return (a+b)
+
+print(somar(2,3))
+
+def modificar(funcao):
+    def somarpares(a,b):
+        if a%2==0 or b%2==0:
+            return(a-b)
+    return subtrair
+
+print(somar(3,3))
+print(somar(2,3))
+
+def meudecorador(funcao):
+    def imprimealgo():
+        print("Eu não sei somar")
+    return imprimealgo
+
+@meudecorador
+def imprime():
+    print("Eu sei somar")
+#imprime=meudecorador(imprime)
+imprime()
