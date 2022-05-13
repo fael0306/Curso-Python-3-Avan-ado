@@ -1210,3 +1210,21 @@ s1 = Singleton()
 print(s1)
 s2 = Singleton()
 print(s2)
+
+class Singleton:
+    __instance = None
+    def __init__(self):
+        if not Singleton.__instance:
+            print("__init foi chamado")
+        else:
+            print("Instância já criada: ", self.obter_instancia())
+
+    @classmethod
+    def obter_instancia(cls):
+        if not cls.__instance:
+            cls.__instance = Singleton()
+        return cls.__instance
+
+s = Singleton()
+print("Objeto criado: ", Singleton.obter_instancia())
+s2= Singleton()
