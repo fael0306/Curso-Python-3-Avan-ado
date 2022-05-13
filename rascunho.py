@@ -1098,3 +1098,22 @@ print(obj.__class__.__class__)
 
 lista = ["Python", "PHP", "C", "Ruby", "Lua"]
 print(sorted(lista, key=len))
+
+add = lambda x, y, z: x+y+z
+print(add(10,20,30))
+print(add("Rafael", " Manteiga", " Balbino"))
+
+x = 10
+a = lambda y: x+y
+x = 20
+b = lambda y: x+y
+print(a(10))
+print(b(10))
+x = 15
+print(a(10))
+x = 10
+a = lambda y, x=x:x+y
+x = 20
+b = lambda y, x=x:x+y
+print(a(10))
+print(b(10))
