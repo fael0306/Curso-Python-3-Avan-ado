@@ -999,3 +999,24 @@ for i in fib:
     print(i, end=" ")
 
 #__iter__() --> iter(fib)
+
+def fib(max):
+    x,y = 1,1
+    while x<max:
+        yield x
+        x,y = y, x+y
+
+gen = fib(15)
+
+'''
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+'''
+
+for i in gen:
+    print(i, end=' ')
