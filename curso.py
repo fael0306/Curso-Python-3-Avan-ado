@@ -1147,6 +1147,7 @@ for linha in db.execute("select * from tabela1"):
 # Métodos
 #   - representam o comportamento do objeto
 
+"""
 class Pessoa(object):
     def __init__(self, nome, idade):
         self.nome = nome
@@ -1155,8 +1156,8 @@ class Pessoa(object):
         return "<Pessoa (%s,%s)>" % (self.nome, self.idade)
 
 p = Pessoa("Rafael", 28)
-print("TIpo do objeto: ", type(p), "\nMemória: ", id(p))
-
+print("Tipo do objeto: ", type(p), "\nMemória: ", id(p))
+"""
 # Polimorfismos embutidos
 print(2+3)
 print("Rafael"+" Manteiga")
