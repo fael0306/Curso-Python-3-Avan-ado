@@ -834,3 +834,42 @@ numero.append(8)
 print(numero)
 print(numero2)
 
+def algo():
+    raise Exception("Excecao")
+    print("depois do raise") # não executa
+
+def algo2():
+    try:
+        algo()
+    except:
+        print("Eu peguei uma excecao")
+        print("Executado após a exceção")
+algo2()
+
+def divisao(divisor):
+    try:
+        if divisor == 20:
+            raise ValueError("Não pode 20")
+       # return 10/divisor
+    except ZeroDivisionError:
+        return "\nDividir por zero não é uma boa ideia"
+    except TypeError:
+        return "\nDigite um número"
+    except ValueError:
+        print("Não utilize o número 20")
+        raise
+    else:
+        print("Não ocorreu nenhuma exceção")
+    finally:
+        print("Isso sempre será executado")
+
+print(divisao(0))
+print(divisao("string"))
+print(divisao(15))
+
+try:
+    raise ValueError("Argumento")
+except ValueError as e:
+    print("Os argumentos da exceção foram: ", e.args)
+finally:
+    print("Isso sempre será executado.")
