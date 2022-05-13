@@ -1117,3 +1117,16 @@ x = 20
 b = lambda y, x=x:x+y
 print(a(10))
 print(b(10))
+
+import sqlite3
+db = sqlite3.connect("database.db")
+c = db.cursor()
+c.execute("create table tabela1 (nome text, cod integer, preco real)")
+db.commit()
+testando = [("Teste",5674,8837),("novamente",222,1200)]
+print(testando)
+
+c.executemany("insert into tabela1 values (?,?,?)",testando)
+db.commit()
+for linha in db.execute("select * from tabela1"):
+    print(linha)
