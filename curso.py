@@ -1165,3 +1165,36 @@ nome = "Rafael"
 lista = [1,2,3,4]
 tupla = (1,2,3,4)
 print(nome[0], lista[0], tupla[0])
+
+class Pai:
+    def pai(self):
+        print("Oi, sou a classe pai")
+
+class Filha(Pai):
+    def filha(self):
+        print("Oi, sou a classe filha.")
+
+filha = Filha()
+filha.pai()
+
+class Adiciona:
+    def __init__(self):
+        self.soma = 0
+    def adiciona(self, valor):
+        self.soma = self.soma+valor
+
+ad = Adiciona()
+for i in range(10):
+    ad.adiciona(i)
+
+class A(object):
+    def a1(self):
+        print("a1")
+
+class B(object):
+    def b(self):
+        print("b")
+        A().a1()
+
+objB = B()
+objB.b()
