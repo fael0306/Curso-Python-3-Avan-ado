@@ -1130,3 +1130,38 @@ c.executemany("insert into tabela1 values (?,?,?)",testando)
 db.commit()
 for linha in db.execute("select * from tabela1"):
     print(linha)
+# Objetos
+#   Atributos (membros de dados)
+#   Procedimentos
+
+# objeto carro -> combustível, rodas, acelerar...
+
+# Objetos
+#   - representam entidades
+
+# Classes
+#   - definem objetos
+
+# Pessoa -> nome, idade, peso, ir_a_escola
+
+# Métodos
+#   - representam o comportamento do objeto
+
+class Pessoa(object):
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+    def obter_pessoa(self):
+        return "<Pessoa (%s,%s)>" % (self.nome, self.idade)
+
+p = Pessoa("Rafael", 28)
+print("TIpo do objeto: ", type(p), "\nMemória: ", id(p))
+
+# Polimorfismos embutidos
+print(2+3)
+print("Rafael"+" Manteiga")
+
+nome = "Rafael"
+lista = [1,2,3,4]
+tupla = (1,2,3,4)
+print(nome[0], lista[0], tupla[0])
