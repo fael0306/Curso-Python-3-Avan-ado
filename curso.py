@@ -1199,3 +1199,14 @@ class B(object):
 
 objB = B()
 objB.b()
+
+class Singleton(object):
+    def __new__(cls):
+        if not hasattr(cls, "instance"):
+            cls.instante = super(Singleton, cls).__new__(cls)
+        return cls.instante
+
+s1 = Singleton()
+print(s1)
+s2 = Singleton()
+print(s2)
