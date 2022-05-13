@@ -899,3 +899,20 @@ finally:
 
 #PalavrasComecandoPorMaiscula #classe
 #minusculas_separadas_por_underscores # função
+
+import json
+
+data = {
+    "Nome":"Rafael",
+    "Idade": 22,
+    "Peso": 62
+    }
+
+jsonstr = json.dumps(data)
+print(jsonstr)
+
+data = json.loads(jsonstr)
+print(jsonstr)
+print(type(jsonstr))
+print(data)
+print(type(data))
