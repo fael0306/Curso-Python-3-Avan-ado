@@ -953,3 +953,22 @@ lista = MyList()
 print(lista.sort()) # Retorna diferente pois está sobrescrito
 
 print(help(list.sort))
+
+#def funcao(*args):
+#    print(args)
+#funcao(1,2,3,"Rafael")
+
+def funcao(**kwargs):
+    print(kwargs)
+    
+funcao(nome="Rafael",idade=22, linguagem = "Python")
+
+print("")
+
+# ou
+
+def funcao(**kwargs):
+    for key, value in kwargs.items():
+        print(key,value)
+        
+funcao(nome="Rafael",idade=22, linguagem = "Python")
