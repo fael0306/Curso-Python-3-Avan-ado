@@ -1054,3 +1054,45 @@ def imprime():
     print("Eu sei somar")
 #imprime=meudecorador(imprime)
 imprime()
+
+class MinhaClasse(object):
+    var = True
+
+#MinhaClasse = MetaClasse()
+#MeuObjeto = MinhaClasse()
+
+MinhaClasse = type("MinhaClasse", (), {"var":True})
+print(MinhaClasse)
+obj = MinhaClasse()
+print(obj.var)
+
+var = 10
+print(var.__class__)
+
+nome = "Python"
+print(nome.__class__)
+
+class Foo(object): pass
+
+obj = Foo()
+print(obj.__class__)
+
+idade = 20
+print(idade.__class__)
+#Meta Classe
+print(idade.__class__.__class__)
+
+class MinhaMetaClasse(type):
+    def __new__(cls, clsname, superclasses, attributedict):
+        print("clsname: ", clsname)
+        print("superclasses: ", superclasses)
+        print("atributos: ", attributedict)
+        return type.__new__(cls, clsname, superclasses, attributedict)
+class Pai:
+    pass
+class Filha(Pai, metaclass=MinhaMetaClasse):
+    pass
+
+obj = Filha()
+print(obj.__class__.__class__)
+
