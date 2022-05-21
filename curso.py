@@ -1244,3 +1244,35 @@ print("b2: ", b2)
 print(b1.__dict__)
 print(b2.__dict__)
 
+a = 5
+print(type(a))
+print(type(int))
+
+class MetaClasse(type):
+    def __call__(cls, *args, **kargs):
+        print("Minha metaclasse", args)
+        return type.__call__(cls, *args, **kargs)
+
+
+
+class int(metaclass=MetaClasse):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+obj = int(4, 5)
+
+class MetaSingleton(type):
+    _instances = {}
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(MetaSingleton, cls).__call__(*args, **kwargs)
+        return cls._instances[cls]
+
+class Test(metaclass=MetaSingleton):
+    pass
+
+t1 = Test()
+t2 = Test()
+
+print(t1,t2)
