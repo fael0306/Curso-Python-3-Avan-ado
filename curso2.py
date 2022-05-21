@@ -666,3 +666,54 @@ if __name__ == "__main__":
     f = Fabrica()
     f.produzirsom(Cachorro)
     f.produzirsom(Gato)
+
+from abc import ABCMeta, abstractmethod
+
+class Secao(metaclass=ABCMeta):
+    @abstractmethod
+    def descricao(self):
+        pass
+
+class SecaoPessoa(Secao):
+    def descricao(self):
+        print("Seção pessoal")
+
+class SecaoAlbum(Secao):
+    def descricao(self):
+        print("Seção de fotos")
+
+class SecaoPatente(Secao):
+    def descricao(self):
+        print("Seção patente")
+
+class SecaoPublicacao(Secao):
+    def descricao(self):
+        print("Seção publicação")
+
+class Perfil(metaclass=ABCMeta):
+    def __init__(self):
+        self.secoes = []
+        self.criarperfil()
+
+    @abstractmethod
+    def criarperfil(self):
+        pass
+    def obtersecoes(self):
+        return self.secoes
+    def addsecoes(self, secao):
+        self.secoes.append(secao)
+
+class Facebook(Perfil):
+    def criarperfil(self):
+        self.addsecoes(SecaoPessoa())
+        self.addsecoes(SecaoPatente())
+        self.addsecoes(SecaoPublicacao())
+class Twitter(Perfil):
+    def criarperfil(self):
+        self.addsecoes(SecaoAlbum())
+
+if __name__=="__main__":
+    tipoperfil = "Facebook"
+    perfil = eval(tipoperfil)()
+    print(perfil.obtersecoes())
+
