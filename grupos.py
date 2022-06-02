@@ -6,9 +6,8 @@ fammanteigabrde = {"Rafael","Adriano","Diego","Gabriel","Josi2","Júnior","Nilza
 familiatrololo = {"Rafael","Gabriel","Mãe","Pai"}
 
 uniao = (fotosagatha | mabame | maedeutsch | trioparadadura | fammanteigabrde | familiatrololo)
-intersecao = (fotosagatha & mabame & maedeutsch & trioparadadura & fammanteigabrde & familiatrololo)
 
-grupoideal = sorted(uniao-intersecao)
+grupoideal = sorted(uniao)
 
 print("")
 
