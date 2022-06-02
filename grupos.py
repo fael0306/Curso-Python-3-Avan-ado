@@ -5,9 +5,7 @@ trioparadadura = {"Rafael","Mãe","Pai"}
 fammanteigabrde = {"Rafael","Adriano","Diego","Gabriel","Josi2","Júnior","Nilza","Rafaela","Lourdes","Tio Rafael","João Gabriel","Mãe"}
 familiatrololo = {"Rafael","Gabriel","Mãe","Pai"}
 
-uniao = (fotosagatha | mabame | maedeutsch | trioparadadura | fammanteigabrde | familiatrololo)
-
-grupoideal = sorted(uniao)
+grupoideal = sorted(fotosagatha | mabame | maedeutsch | trioparadadura | fammanteigabrde | familiatrololo)
 
 print("")
 
